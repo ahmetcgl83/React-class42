@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import { Categories } from "./components/Categories";
+import { Products } from "./components/Products";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [category, setCategory] = useState("all");
+
+	function handleCategoryNameClick(e) {
+		const category = e.target.textContent.slice(6);
+		setCategory(category);
+	}
+	return (
+		<div className="App">
+			<h1>Products</h1>
+			<Categories handleCategoryNameClick={handleCategoryNameClick} />
+			<Products categoryName={category} />
+		</div>
+	);
 }
 
 export default App;

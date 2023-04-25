@@ -1,38 +1,78 @@
+body {
+	font-family: HelveticaNow, Helvetica, sans-serif;
+}
+
 .App {
-  text-align: center;
+	margin: 8px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+img {
+	border-style: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.categories {
+	display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.categories--item {
+	background-color: #efeff0;
+	cursor: pointer;
+	font-weight: 700;
+	margin: 2px;
+	padding: 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.categories--item-selected {
+	background-color: #bdbdc1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.products {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	margin-block-end: 0;
+	margin-block-start: 0;
+	padding-inline-start: 0;
+}
+
+.products--item {
+	margin: 8px;
+	width: 100%;
+}
+
+@media (min-width: 600px) {
+	.products--item {
+		width: calc(50% - 16px);
+	}
+}
+
+@media (min-width: 1000px) {
+	.products--item {
+		width: calc(33% - 16px);
+	}
+}
+
+.product {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.product--image {
+	margin-bottom: auto;
+	margin-top: auto;
+	max-height: 300px;
+	object-fit: contain;
+	width: 100%;
+}
+
+.product--title {
+	overflow: hidden;
+	padding-top: 8px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
